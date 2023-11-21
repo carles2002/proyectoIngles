@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loginPage.aspx.cs" Inherits="EnglishProject.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="EnglishProject.LoginPage" %>
 
 <!DOCTYPE html>
 
@@ -10,6 +10,8 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID="LabelDBPath" runat="server"></asp:Label>
+
         </div>
     </form>
 </body>
