@@ -36,6 +36,19 @@ namespace EnglishProject
             dt.Load(reader);
             return dt;
         }
+        public DataTable query(String query)
+        {
+            
+            
+            SQLiteCommand comm = new SQLiteCommand(query, conn);
+
+            //READ DATABASE
+            SQLiteDataReader reader = comm.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+
+            return dt;
+        }
 
 
     }
