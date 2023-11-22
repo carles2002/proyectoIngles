@@ -398,3 +398,5 @@ FodyWeavers.xsd
 *.sln.iml
 
 EnglishProject/EnglishProject/obj/Debug/
+
+EnglishProject/EnglishProject/bin/
