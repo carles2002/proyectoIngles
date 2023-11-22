@@ -35,9 +35,7 @@ namespace EnglishProject
                     //Obtener datos de la tabla de la bd 
                     foreach (DataRow dr in dt.Rows)
                     {
-                        LabelDBPath.Text = LabelDBPath.Text + dr["user"].ToString();
-                        LabelDBPath.Text = LabelDBPath.Text + dr["password"].ToString();
-                        LabelDBPath.Text = LabelDBPath.Text + dr["level"].ToString();
+                        
 
                         // Guardar los valores en la sesión
                         Session["user"] = dr["user"].ToString();
@@ -51,6 +49,7 @@ namespace EnglishProject
                     {
                         case 0:
                             //ADMIN
+                            Response.Redirect("admin.aspx");
                             break;
                         case 1:
                             //STUDENT
@@ -59,7 +58,7 @@ namespace EnglishProject
                         
                         case 2:
                             //PROFESSOR
-                            Response.Redirect("student.aspx");
+                            Response.Redirect("professor.aspx");
                             break;
                         default:
                             LabelDBPath.Text = "ERROR: NO LEVEL";
