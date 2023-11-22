@@ -15,6 +15,15 @@ namespace EnglishProject
     {
 
         /// <summary>
+        /// Control navbarText.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl navbarText;
+
+        /// <summary>
         /// Control form1.
         /// </summary>
         /// <remarks>
@@ -24,6 +33,15 @@ namespace EnglishProject
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Control Panel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
+
+        /// <summary>
         /// Control LabelDBPath.
         /// </summary>
         /// <remarks>
@@ -31,15 +49,6 @@ namespace EnglishProject
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelDBPath;
-
-        /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
         /// Control Label2.

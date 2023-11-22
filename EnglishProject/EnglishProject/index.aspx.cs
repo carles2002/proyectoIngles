@@ -13,5 +13,15 @@ namespace EnglishProject
         {
 
         }
+
+        public void loginbtn(object sender, EventArgs e)
+        {
+            Response.Redirect("loginPAge.aspx");
+        }
+
+        public void logo(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
     }
 }

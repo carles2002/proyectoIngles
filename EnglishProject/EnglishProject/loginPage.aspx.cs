@@ -84,6 +84,7 @@ namespace EnglishProject
                 // Puedes imprimir el mensaje de la excepción o realizar cualquier otra acción necesaria.
                 // Por ejemplo:
                 LabelDBPath.Text = "Error: No se ha encontrado al usuario en la BD o la conexión ha fallado" ;
+                Panel1.Visible = true;
             }
 
 
