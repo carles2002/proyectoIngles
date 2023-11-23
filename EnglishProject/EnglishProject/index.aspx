@@ -21,7 +21,7 @@
             <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary" runat="server">
                 <div class="container-fluid" runat="server">
                     <!-- Logo -->
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="index.aspx">
                         <img src="../img/logo.png" alt="Logo" width="225" height="80" class="d-inline-block align-text-top" />
                     </a>
 

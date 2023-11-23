@@ -18,8 +18,8 @@
         <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary" runat="server">
             <div class="container-fluid" runat="server">
                 <!-- Logo -->
-                <a class="navbar-brand" onclick="logo" runat="server">
-                    <asp:Image runat="server" src="../img/logo.png" href="index.aspx" alt="Logo" Width="225" Height="80" class="d-inline-block align-text-top" />
+                <a class="navbar-brand" onclick="logo" runat="server" href="index.aspx" >
+                    <asp:Image runat="server" src="../img/logo.png"  alt="Logo" Width="225" Height="80" class="d-inline-block align-text-top" />
                 </a>
 
                 <!-- Menu -->
