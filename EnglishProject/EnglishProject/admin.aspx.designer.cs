@@ -15,6 +15,15 @@ namespace EnglishProject
     {
 
         /// <summary>
+        /// Control navbarText.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl navbarText;
+
+        /// <summary>
         /// Control form1.
         /// </summary>
         /// <remarks>
@@ -141,6 +150,24 @@ namespace EnglishProject
         protected global::System.Web.UI.WebControls.Button studDelete;
 
         /// <summary>
+        /// Control profList.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox profList;
+
+        /// <summary>
+        /// Control deleteProf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button deleteProf;
+
+        /// <summary>
         /// Control studDNI.
         /// </summary>
         /// <remarks>
@@ -166,24 +193,6 @@ namespace EnglishProject
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button addStudent;
-
-        /// <summary>
-        /// Control profList.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox profList;
-
-        /// <summary>
-        /// Control deleteProf.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button deleteProf;
 
         /// <summary>
         /// Control DNIprof.
