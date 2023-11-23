@@ -5,7 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -19,8 +18,8 @@
         <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary" runat="server">
             <div class="container-fluid" runat="server">
                 <!-- Logo -->
-                <a class="navbar-brand" onclick="logo" runat="server">
-                    <asp:Image runat="server" src="../img/logo.png" href="index.aspx" alt="Logo" Width="225" Height="80" class="d-inline-block align-text-top" />
+                <a class="navbar-brand" onclick="logo" runat="server" href="index.aspx" >
+                    <asp:Image runat="server" src="../img/logo.png"  alt="Logo" Width="225" Height="80" class="d-inline-block align-text-top" />
                 </a>
 
                 <!-- Menu -->
