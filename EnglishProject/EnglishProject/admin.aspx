@@ -43,7 +43,7 @@
             <div>
                 <h2>Students in Subject</h2>
                 <asp:ListBox ID="studentsList" runat="server" AutoPostBack="true" OnSelectedIndexChanged="students_SelectedIndexChanged"></asp:ListBox>
-                
+                <asp:Button ID="studDelete" runat="server" Text="Delete Selected Student" OnClick="deleteStudentSubj" />
                 <h2>Add Student in Selected Subject</h2>
                 <p>Student DNI</p>
                 <asp:TextBox ID="studDNI" runat="server" ></asp:TextBox>
@@ -51,6 +51,21 @@
                 <asp:TextBox ID="addyear" runat="server" ></asp:TextBox>
 
                 <asp:Button ID="addStudent" runat="server" Text="Add Students" OnClick="studDNI_add" />
+                
+                
+            </div>
+
+            div>
+                <h2>Professors in Subject</h2>
+                <asp:ListBox ID="profList" runat="server" AutoPostBack="true" ></asp:ListBox>
+                <asp:Button ID="deleteProf" runat="server" Text="Delete Selected Profesor" OnClick="deleteProfessorSubj" />
+                <h2>Add a Professor in Selected Subject</h2>
+                <p>Profesor DNI</p>
+                <asp:TextBox ID="DNIprof" runat="server" ></asp:TextBox>
+                <p>Year of the subject</p>
+                <asp:TextBox ID="yearSubProf" runat="server" ></asp:TextBox>
+
+                <asp:Button ID="addProf" runat="server" Text="Add Professor" OnClick="profDNI_add" />
                 
                 
             </div>

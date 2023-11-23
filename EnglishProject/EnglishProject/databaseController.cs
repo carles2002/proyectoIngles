@@ -131,7 +131,7 @@ namespace EnglishProject
         public bool addStudentToSubject(String ID, String DNI, String Year)
         {
 
-            string verifySentence = "SELECT DNI FROM subjectsStud WHERE DNI = '" + DNI + "'";
+            string verifySentence = "SELECT DNI FROM subjectsStud  WHERE DNI = '" + DNI + "' AND ID = '" + ID + "'";
             DataTable dtVerify = query(verifySentence);
 
             // If any rows are returned, the DNI already exists, so we return false
@@ -145,6 +145,29 @@ namespace EnglishProject
             string sentence = "INSERT INTO subjectsStud (ID, DNI, Year) VALUES ('" + ID + "', '" + DNI + "', '" + Year + "')";
             
             
+            DataTable dt = query(sentence);
+            // Execute the query and check the result
+            // Assuming 'executeNonQuery' is a method that executes an SQL statement and returns the number of rows affected
+            return true;
+        }
+
+        public bool addProfessorToSubject(String ID, String DNI, String Year)
+        {
+
+            string verifySentence = "SELECT DNI FROM subjectsProf  WHERE DNI = '" + DNI + "' AND ID = '" + ID + "'";
+            DataTable dtVerify = query(verifySentence);
+
+            // If any rows are returned, the DNI already exists, so we return false
+            if (dtVerify.Rows.Count > 0)
+            {
+                return false; // DNI exists, so we cannot add a new student with the same DNI
+            }
+            // Construct the INSERT SQL statement
+
+
+            string sentence = "INSERT INTO subjectsProf (ID, DNI, Year) VALUES ('" + ID + "', '" + DNI + "', '" + Year + "')";
+
+
             DataTable dt = query(sentence);
             // Execute the query and check the result
             // Assuming 'executeNonQuery' is a method that executes an SQL statement and returns the number of rows affected

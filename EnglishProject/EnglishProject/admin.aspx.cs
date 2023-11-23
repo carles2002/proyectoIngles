@@ -12,7 +12,9 @@ namespace EnglishProject
 {
     public partial class admin : System.Web.UI.Page
     {
+        Boolean loaded = false;
         databaseController dbc = new databaseController();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -24,9 +26,22 @@ namespace EnglishProject
                 Response.Redirect("silly.aspx");
             }
 
-            
-
             dbc.connectToDB();
+
+            if (loaded == false)
+            {
+                subjectsList.Items.Clear();
+                DataTable dt = dbc.selectAll("subjects");
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    // Agrega el nombre de la asignatura como un ítem en la ListBox.
+                    subjectsList.Items.Add(row["Name"].ToString());
+                }
+                loaded = true;
+            }
+
+           
 
         }
         protected void viewSubjects(object sender, EventArgs e)
@@ -62,13 +77,19 @@ namespace EnglishProject
                 detailsb.Text = dr["Details"].ToString();
             }
 
+            loadStudents();
+            
+        }
+        protected void loadStudents()
+        {
+            String selectedName = subjectsList.SelectedValue;
             //Obtener el ID de la asignatura y cargar los alumnos-----------------------
-            dt = dbc.query("SELECT ID FROM subjects WHERE Name = '" + selectedName + "'");
+            DataTable dt = dbc.query("SELECT ID FROM subjects WHERE Name = '" + selectedName + "'");
 
-            String subID="";
+            String subID = "";
             foreach (DataRow dr in dt.Rows)
             {
-               subID = dr["ID"].ToString();
+                subID = dr["ID"].ToString();
             }
             output.Text = subID;
 
@@ -80,13 +101,10 @@ namespace EnglishProject
                 DNI = dr["DNI"].ToString();
                 studentsList.Items.Add(dr["DNI"].ToString());
             }
-            
         }
 
         protected void students_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
 
         }
 
@@ -122,6 +140,8 @@ namespace EnglishProject
   
         }
 
+
+        //STUDENT -------------------------------------------------------------------
         protected void studDNI_add(object sender, EventArgs e)
         {
 
@@ -134,14 +154,84 @@ namespace EnglishProject
             {
                 subID = dr["ID"].ToString();
             }
-            output.Text = subID;
+            
             
 
             Boolean ver =  dbc.addStudentToSubject(subID, studDNI.Text.ToString(), addyear.Text.ToString());
-             if (!ver)
+             if (ver==false)
             {
                 output.Text= "An error has occurred adding the Student";
             }
+             loadStudents();
         }
+
+        protected void deleteStudentSubj(object sender, EventArgs e)
+        {
+            String DNI = studentsList.SelectedValue;
+            String subID = subjectsList.SelectedValue;
+            DataTable dt = dbc.query("DELETE FROM subjectsStud WHERE DNI = '" + DNI + "' AND ID = '" + subID + "'");
+
+            loadStudents();
+        }
+
+
+
+        //PROFESOR---------------------------------------------------------------------------------
+
+        protected void loadProfessors()
+        {
+            String selectedName = subjectsList.SelectedValue;
+            //Obtener el ID de la asignatura y cargar los alumnos-----------------------
+            DataTable dt = dbc.query("SELECT ID FROM subjects WHERE Name = '" + selectedName + "'");
+
+            String subID = "";
+            foreach (DataRow dr in dt.Rows)
+            {
+                subID = dr["ID"].ToString();
+            }
+            output.Text = subID;
+
+            dt = dbc.query("SELECT DNI FROM subjectsProf WHERE ID = '" + subID + "'");
+            String DNI = "";
+            studentsList.Items.Clear();
+            foreach (DataRow dr in dt.Rows)
+            {
+                DNI = dr["DNI"].ToString();
+                studentsList.Items.Add(dr["DNI"].ToString());
+            }
+        }
+        protected void profDNI_add(object sender, EventArgs e)
+        {
+
+            
+
+            DataTable dt = dbc.query("SELECT ID FROM subjects WHERE Name = '" + selectedName + "'");
+
+            String subID = "";
+            foreach (DataRow dr in dt.Rows)
+            {
+                subID = dr["ID"].ToString();
+            }
+
+
+            
+            Boolean ver = dbc.addProfessorToSubject(subID, DNIprof.Text.ToString(), addyear.Text.ToString());
+            if (ver == false)
+            {
+                output.Text = "An error has occurred adding the Student";
+            }
+            loadStudents();
+        }
+
+        protected void deleteProfessorSubj(object sender, EventArgs e)
+        {
+            String DNI = studentsList.SelectedValue;
+            String subID = subjectsList.SelectedValue;
+            DataTable dt = dbc.query("DELETE FROM subjectsProf WHERE DNI = '" + DNI + "' AND ID = '" + subID + "'");
+
+            loadStudents();
+        }
+
+
     }
 }
