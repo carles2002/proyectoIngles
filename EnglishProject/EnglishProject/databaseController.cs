@@ -154,7 +154,7 @@ namespace EnglishProject
         public bool addProfessorToSubject(String ID, String DNI, String Year)
         {
 
-            string verifySentence = "SELECT DNI FROM subjectsProf  WHERE DNI = '" + DNI + "' AND ID = '" + ID + "'";
+            string verifySentence = "SELECT DNI FROM subjectsProf  WHERE DNI = '" + DNI + "' AND ID = '" + ID + "'AND Year = '" + Year + "'";
             DataTable dtVerify = query(verifySentence);
 
             // If any rows are returned, the DNI already exists, so we return false
