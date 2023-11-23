@@ -15,7 +15,7 @@ namespace EnglishProject
         databaseController dbc = new databaseController();
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
+            
             // Verificar si la variable de sesión "level" es igual a 1
             if (Session["level"] == null || (int)Session["level"] != 1)
             {
@@ -23,7 +23,7 @@ namespace EnglishProject
                 Response.Redirect("silly.aspx"); 
             }
 
-            */
+            
 
             if (!IsPostBack) //Para saber si se carga por primera vez o es al volver con datos
             {

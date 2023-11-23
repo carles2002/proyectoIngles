@@ -15,7 +15,7 @@ namespace EnglishProject
         protected void Page_Load(object sender, EventArgs e)
 		{
             
-            /*
+            
            // Verificar si la variable de sesión "level" es igual a 2
            if (Session["level"] == null || (int)Session["level"] != 2)
            {
@@ -23,8 +23,8 @@ namespace EnglishProject
                Response.Redirect("silly.aspx"); 
            }
 
-           */
-            Session["user"] = "123456789C";
+           
+            
             dbc.connectToDB();
 
         }

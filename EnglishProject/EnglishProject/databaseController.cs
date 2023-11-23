@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Runtime.Remoting.Messaging;
 using System.Web;
+using System.Xml.Linq;
 
 namespace EnglishProject
 {
@@ -89,6 +90,68 @@ namespace EnglishProject
 
             return verified;
         }
+
+        public DataTable obtainSubjectInfo(String Name)
+        {
+            //Se llama al metodo para hacer consultas
+            String sentence = "SELECT * FROM subjects WHERE Name = '" + Name + "'";
+
+            DataTable dt = new DataTable();
+            dt = query(sentence);
+
+            return dt;
+        }
+        public bool updateSubjectInfo(String ID, String name, String credits, String semester, String year, String details)
+        {
+
+            bool verified = true;
+            //Se llama al metodo para hacer consultas
+            string sentence = "UPDATE subjects SET ID = '" + ID + "', Name = '" + name + "', Credits = '" + credits + "', Semester = '" + semester + "', Year = '" + year + "', Details = '" + details + "' WHERE ID = '" + ID + "'";
+
+            DataTable dt = new DataTable();
+            dt = query(sentence);
+            if (dt.Rows != null)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    if (ID != dr["Id"].ToString()) { verified = false; }
+                    if (name != dr["Name"].ToString()) { verified = false; }
+                    if (credits != dr["Credits"].ToString()) { verified = false; }
+                    if (semester != dr["Semester"].ToString()) { verified = false; }
+                    if (year != dr["Year"].ToString()) { verified = false; }
+                    if (details != dr["Details"].ToString()) { verified = false; }
+                }
+
+            }
+            else { verified = false; }
+
+            return verified;
+        }
+
+        public bool addStudentToSubject(String ID, String DNI, String Year)
+        {
+
+            string verifySentence = "SELECT DNI FROM subjectsStud WHERE DNI = '" + DNI + "'";
+            DataTable dtVerify = query(verifySentence);
+
+            // If any rows are returned, the DNI already exists, so we return false
+            if (dtVerify.Rows.Count > 0)
+            {
+                return false; // DNI exists, so we cannot add a new student with the same DNI
+            }
+            // Construct the INSERT SQL statement
+
+
+            string sentence = "INSERT INTO subjectsStud (ID, DNI, Year) VALUES ('" + ID + "', '" + DNI + "', '" + Year + "')";
+            
+            
+            DataTable dt = query(sentence);
+            // Execute the query and check the result
+            // Assuming 'executeNonQuery' is a method that executes an SQL statement and returns the number of rows affected
+            return true;
+        }
+
+
 
 
     }
