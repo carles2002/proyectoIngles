@@ -10,7 +10,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Button ID="ViewSubj" runat="server" Text="View Subjects" OnClick="viewSubjects" />
+            
+            <asp:Button ID="addStudents" runat="server" Text="Add New Students"  OnClick="goToAddStudent"/>
+            <asp:Button ID="addProfessors" runat="server" Text="Add New Professors" OnClick="goToAddProfessor" />
                 
             <h2>Subjects List</h2>
             <asp:ListBox ID="subjectsList" runat="server" AutoPostBack="true" OnSelectedIndexChanged="subjectsList_SelectedIndexChanged"></asp:ListBox>
@@ -55,7 +57,7 @@
                 
             </div>
 
-            div>
+            <div>
                 <h2>Professors in Subject</h2>
                 <asp:ListBox ID="profList" runat="server" AutoPostBack="true" ></asp:ListBox>
                 <asp:Button ID="deleteProf" runat="server" Text="Delete Selected Profesor" OnClick="deleteProfessorSubj" />

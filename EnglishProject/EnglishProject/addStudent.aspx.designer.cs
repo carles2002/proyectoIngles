@@ -11,7 +11,7 @@ namespace EnglishProject
 {
 
 
-    public partial class admin
+    public partial class addStudent
     {
 
         /// <summary>
@@ -24,94 +24,130 @@ namespace EnglishProject
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control addStudents.
+        /// Control navbarText.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addStudents;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl navbarText;
 
         /// <summary>
-        /// Control addProfessors.
+        /// Control name.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addProfessors;
+        protected global::System.Web.UI.WebControls.Label name;
 
         /// <summary>
-        /// Control subjectsList.
+        /// Control nameB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox subjectsList;
+        protected global::System.Web.UI.WebControls.TextBox nameB;
 
         /// <summary>
-        /// Control idb.
+        /// Control surname.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idb;
+        protected global::System.Web.UI.WebControls.Label surname;
 
         /// <summary>
-        /// Control nameb.
+        /// Control surnameB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nameb;
+        protected global::System.Web.UI.WebControls.TextBox surnameB;
 
         /// <summary>
-        /// Control creditsb.
+        /// Control dni.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox creditsb;
+        protected global::System.Web.UI.WebControls.Label dni;
 
         /// <summary>
-        /// Control semesterb.
+        /// Control dniB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox semesterb;
+        protected global::System.Web.UI.WebControls.TextBox dniB;
 
         /// <summary>
-        /// Control yearb.
+        /// Control dob.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox yearb;
+        protected global::System.Web.UI.WebControls.Label dob;
 
         /// <summary>
-        /// Control detailsb.
+        /// Control dobb.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox detailsb;
+        protected global::System.Web.UI.WebControls.TextBox dobb;
 
         /// <summary>
-        /// Control saveInfo.
+        /// Control address.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button saveInfo;
+        protected global::System.Web.UI.WebControls.Label address;
+
+        /// <summary>
+        /// Control addressb.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox addressb;
+
+        /// <summary>
+        /// Control nationality.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nationality;
+
+        /// <summary>
+        /// Control nationalityb.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nationalityb;
+
+        /// <summary>
+        /// Control send_information.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button send_information;
 
         /// <summary>
         /// Control output.
@@ -123,93 +159,21 @@ namespace EnglishProject
         protected global::System.Web.UI.WebControls.Label output;
 
         /// <summary>
-        /// Control studentsList.
+        /// Control studentList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox studentsList;
+        protected global::System.Web.UI.WebControls.ListBox studentList;
 
         /// <summary>
-        /// Control studDelete.
+        /// Control deleteButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button studDelete;
-
-        /// <summary>
-        /// Control studDNI.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox studDNI;
-
-        /// <summary>
-        /// Control addyear.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox addyear;
-
-        /// <summary>
-        /// Control addStudent.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addStudent;
-
-        /// <summary>
-        /// Control profList.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox profList;
-
-        /// <summary>
-        /// Control deleteProf.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button deleteProf;
-
-        /// <summary>
-        /// Control DNIprof.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DNIprof;
-
-        /// <summary>
-        /// Control yearSubProf.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox yearSubProf;
-
-        /// <summary>
-        /// Control addProf.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addProf;
+        protected global::System.Web.UI.WebControls.Button deleteButton;
     }
 }

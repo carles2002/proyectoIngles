@@ -27,13 +27,17 @@ namespace EnglishProject
             }
 
             dbc.connectToDB();
+            if (!IsPostBack) //Para saber si se carga por primera vez o es al volver con datos
+            {
+                viewSubjects();
+                
+            }
 
-           
 
-           
+
 
         }
-        protected void viewSubjects(object sender, EventArgs e)
+        protected void viewSubjects()
         {
             
             subjectsList.Items.Clear();
@@ -231,6 +235,15 @@ namespace EnglishProject
             dt = dbc.query("DELETE FROM subjectsProf WHERE DNI = '" + DNI + "' AND ID = '" + subID + "'");
 
             loadProfessors();
+        }
+
+        protected void goToAddStudent(object sender, EventArgs e)
+        {
+            Response.Redirect("addStudent.aspx");
+        }
+        protected void goToAddProfessor(object sender, EventArgs e)
+        {
+            Response.Redirect("addStudent.aspx");
         }
 
 

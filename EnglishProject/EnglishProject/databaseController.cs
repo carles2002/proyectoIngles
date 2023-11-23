@@ -67,7 +67,7 @@ namespace EnglishProject
         public bool updateStudentInfo(String name,String surname,String DNI, String DOB, String nationality, String address)
         {
             
-            bool verified = true;
+            bool verified = false;
             //Se llama al metodo para hacer consultas
             string sentence = "UPDATE students SET Name = '" + name + "', Surname = '" + surname + "', DOB = '" + DOB + "', Nationality = '" + nationality + "', Address = '" + address + "' WHERE DNI = '" + DNI + "'";
 
@@ -89,6 +89,43 @@ namespace EnglishProject
             else { verified = false; }
 
             return verified;
+        }
+
+        public bool insertStudentInfo(String name, String surname, String DNI, String DOB, String nationality, String address)
+        {
+            
+            DataTable dt = new DataTable();
+            dt = obtainStudentInfo(DNI);
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (DNI == dr["DNI"].ToString()) { return false; }
+            }
+                //Se llama al metodo para hacer consultas
+            String sentence = "INSERT INTO students (DNI, Name, Surname, DOB, Nationality, Address) VALUES ('" + DNI + "', '" + name + "', '" + surname + "', '" + DOB + "', '" + nationality + "', '" + address + "')";
+
+            
+            dt = query(sentence);
+            
+
+            return true;
+        }
+
+        public bool deleteStudent( String DNI)
+        {
+
+            DataTable dt = new DataTable();
+            dt = obtainStudentInfo(DNI);
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (DNI != dr["DNI"].ToString()) { return false; }
+            }
+            //Se llama al metodo para hacer consultas
+            string sentence = "DELETE FROM students WHERE DNI = '" + DNI + "'";
+            dt = query(sentence);
+            sentence = "DELETE FROM subjectsStud WHERE DNI = '" + DNI + "'";
+            dt = query(sentence);
+
+            return true;
         }
 
         public DataTable obtainSubjectInfo(String Name)
@@ -127,6 +164,8 @@ namespace EnglishProject
 
             return verified;
         }
+
+
 
         public bool addStudentToSubject(String ID, String DNI, String Year)
         {
