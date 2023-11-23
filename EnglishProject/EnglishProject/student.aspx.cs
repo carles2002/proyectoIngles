@@ -33,7 +33,7 @@ namespace EnglishProject
             }
 
             //Mostrar informacion del alumno
-            Session["user"] = "123456789B";
+            
             if (Session["user"] !=null)
             {
                 //Cargar informacion del alumno
@@ -140,12 +140,8 @@ namespace EnglishProject
             subjectsList.Items.Clear(); // Limpia los ítems existentes.
             foreach (DataRow row in dt.Rows)
             {
-                // Suponiendo que tienes una columna que quieres mostrar, por ejemplo 'SubjectName'.
-                string displayText = row["ID"].ToString(); // Ajusta 'SubjectName' al nombre de tu columna.
-                string value = row["ID"].ToString(); // Ajusta 'ID' si deseas usar otro valor como el valor del ítem.
-
-                ListItem item = new ListItem(row["name"].ToString());
-                subjectsList.Items.Add(item);
+              
+                subjectsList.Items.Add(row["name"].ToString());
             }
         }
 

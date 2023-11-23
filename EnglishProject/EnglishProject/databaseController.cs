@@ -67,12 +67,13 @@ namespace EnglishProject
         public bool updateStudentInfo(String name,String surname,String DNI, String DOB, String nationality, String address)
         {
             
-            bool verified = false;
+            bool verified = true;
             //Se llama al metodo para hacer consultas
             string sentence = "UPDATE students SET Name = '" + name + "', Surname = '" + surname + "', DOB = '" + DOB + "', Nationality = '" + nationality + "', Address = '" + address + "' WHERE DNI = '" + DNI + "'";
 
             DataTable dt = new DataTable();
             dt = query(sentence);
+
             if (dt.Rows != null)
             {
                 foreach (DataRow dr in dt.Rows)
