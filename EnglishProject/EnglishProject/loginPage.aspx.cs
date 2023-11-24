@@ -28,6 +28,7 @@ namespace EnglishProject
 
             try
             {
+                Session["level"] = "";
                 // Sentencia sql que busca al usuario en la bd
                 DataTable dt = dbc.query("SELECT * FROM users WHERE user = '" + userDNI + "' AND password = '" + password + "'");
                 if (dt.Rows != null)

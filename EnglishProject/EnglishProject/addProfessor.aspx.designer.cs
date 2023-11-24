@@ -69,6 +69,15 @@ namespace EnglishProject
         protected global::System.Web.UI.WebControls.TextBox dniB;
 
         /// <summary>
+        /// Control passwordB.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox passwordB;
+
+        /// <summary>
         /// Control send_information.
         /// </summary>
         /// <remarks>

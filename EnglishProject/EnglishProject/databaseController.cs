@@ -92,7 +92,7 @@ namespace EnglishProject
             return verified;
         }
 
-        public bool insertStudentInfo(String name, String surname, String DNI, String DOB, String nationality, String address)
+        public bool insertStudentInfo(String name, String surname, String DNI, String DOB, String nationality, String address, String password)
         {
             
             DataTable dt = new DataTable();
@@ -103,7 +103,9 @@ namespace EnglishProject
             }
                 //Se llama al metodo para hacer consultas
             String sentence = "INSERT INTO students (DNI, Name, Surname, DOB, Nationality, Address) VALUES ('" + DNI + "', '" + name + "', '" + surname + "', '" + DOB + "', '" + nationality + "', '" + address + "')";
+            dt = query(sentence);
 
+            sentence = "INSERT INTO users (user, password, level) VALUES ('" + DNI + "', '" + password + "', '" + 1 + "')";
             
             dt = query(sentence);
             
@@ -124,6 +126,9 @@ namespace EnglishProject
             string sentence = "DELETE FROM students WHERE DNI = '" + DNI + "'";
             dt = query(sentence);
             sentence = "DELETE FROM subjectsStud WHERE DNI = '" + DNI + "'";
+            dt = query(sentence);
+
+            sentence = "DELETE FROM users WHERE user = '" + DNI + "'";
             dt = query(sentence);
 
             return true;
@@ -214,7 +219,7 @@ namespace EnglishProject
             return true;
         }
 
-        public bool insertProfessorInfo(String name,  String DNI)
+        public bool insertProfessorInfo(String name,  String DNI, String password)
         {
 
             DataTable dt = new DataTable();
@@ -225,9 +230,10 @@ namespace EnglishProject
             }
             //Se llama al metodo para hacer consultas
             String sentence = "INSERT INTO professors (DNI, Name) VALUES ('" + DNI + "', '" + name +"')";
-
-
             dt = query(sentence);
+             sentence = "INSERT INTO users (user, password, level) VALUES ('" + DNI + "', '" + password +"', '" + 2 + "')";
+            dt = query(sentence);
+
 
 
             return true;
@@ -246,6 +252,8 @@ namespace EnglishProject
             string sentence = "DELETE FROM professors WHERE DNI = '" + DNI + "'";
             dt = query(sentence);
             sentence = "DELETE FROM subjectsProf WHERE DNI = '" + DNI + "'";
+            dt = query(sentence);
+            sentence = "DELETE FROM users WHERE user = '" + DNI + "'";
             dt = query(sentence);
 
             return true;

@@ -65,7 +65,7 @@
                             <div class="form-outline" runat="server">
                                 <label class="form-label">Name:</label>
                                 <asp:Label ID="name" runat="server" Text="null" class="form-control"></asp:Label>
-                                <asp:TextBox ID="nameB" runat="server" class="form-control" type="text">Name</asp:TextBox>
+                                <asp:TextBox ID="nameB" runat="server" class="form-control" type="text"></asp:TextBox>
 
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                             <div class="form-outline" runat="server">
                                 <label class="form-label">Surname:</label>
                                 <asp:Label ID="surname" runat="server" Text="null" class="form-control"></asp:Label>
-                                <asp:TextBox ID="surnameB" runat="server" class="form-control">Surname</asp:TextBox>
+                                <asp:TextBox ID="surnameB" runat="server" class="form-control"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                             <div class="form-outline" runat="server">
                                 <label class="form-label">DNI:</label>
                                 <asp:Label ID="dni" runat="server" Text="null" class="form-control"></asp:Label>
-                                <asp:TextBox ID="dniB" runat="server" class="form-control">DNI</asp:TextBox>
+                                <asp:TextBox ID="dniB" runat="server" class="form-control"></asp:TextBox>
 
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                             <div class="form-outline" runat="server">
                                 <label class="form-label">Date of birth:</label>
                                 <asp:Label ID="dob" runat="server" Text="null" class="form-control"></asp:Label>
-                                <asp:TextBox ID="dobb" runat="server" class="form-control">DOB</asp:TextBox>
+                                <asp:TextBox ID="dobb" runat="server" class="form-control"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -103,14 +103,21 @@
                             <div class="form-outline" runat="server">
                                 <label class="form-label">Adress:</label>
                                 <asp:Label ID="address" runat="server" Text="null" class="form-control"></asp:Label>
-                                <asp:TextBox ID="addressb" runat="server" class="form-control">Address</asp:TextBox>
+                                <asp:TextBox ID="addressb" runat="server" class="form-control"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col" runat="server">
                             <div class="form-outline" runat="server">
                                 <label class="form-label">Nationality:</label>
                                 <asp:Label ID="nationality" runat="server" Text="null" class="form-control"></asp:Label>
-                                <asp:TextBox ID="nationalityb" runat="server" class="form-control">Nationality</asp:TextBox>
+                                <asp:TextBox ID="nationalityb" runat="server" class="form-control"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="col" runat="server">
+                            <div class="form-outline" runat="server">
+                                <label class="form-label">Password:</label>
+                                
+                                <asp:TextBox ID="passwordB" runat="server" class="form-control"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -118,7 +125,7 @@
                     <!-- buttons -->
                     <div runat="server">
                         <asp:Button ID="send_information" runat="server" Text="Add new Student" OnClick="saveChanges" class="btn btn-success" /><br />
-                       
+
                         <asp:Label ID="output" runat="server" Text=" "></asp:Label>
                         <br />
                     </div>
@@ -127,14 +134,14 @@
                 <br />
 
                 <asp:ListBox ID="studentList" AutoPostBack="false" runat="server"></asp:ListBox>
-<asp:Button ID="deleteButton" runat="server" Text="Delete selected Student" OnClick="deleteSelectedStudent" class="btn btn-success" /><br />
+                <asp:Button ID="deleteButton" runat="server" Text="Delete selected Student" OnClick="deleteSelectedStudent" class="btn btn-success" /><br />
 
 
 
-                
+
             </div>
 
-            
+
         </div>
     </form>
 

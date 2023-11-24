@@ -59,13 +59,14 @@ namespace EnglishProject
                 String dob = dobb.Text;
                 String nationality = nationalityb.Text;
                 String address = addressb.Text;
+                String password = passwordB.Text;
 
 
-                //Comprobacion AQUI
+            //Comprobacion AQUI
 
 
-                //Hacer update y verificar el resultado
-                bool verification = dbc.insertStudentInfo(name, surname, dni, dob, nationality, address);
+            //Hacer update y verificar el resultado
+            bool verification = dbc.insertStudentInfo(name, surname, dni, dob, nationality, address,password);
                 if (verification) { output.Text= "Student: "+name+" "+surname+" added correctly"; }
                 else
                 {

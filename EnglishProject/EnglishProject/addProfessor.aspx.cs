@@ -55,14 +55,14 @@ namespace EnglishProject
             String name = nameB.Text;
             
             String dni = dniB.Text;
-       
 
+            String password = passwordB.Text;
 
             //Comprobacion AQUI
 
 
             //Hacer update y verificar el resultado
-            bool verification = dbc.insertProfessorInfo(name,dni);
+            bool verification = dbc.insertProfessorInfo(name,dni,password);
             if (verification) { output.Text = "Prodessor: " + name +  " added correctly"; }
             else
             {

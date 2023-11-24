@@ -91,7 +91,7 @@
 
                             <!-- buttons -->
                             <asp:Button ID="saveInfo" runat="server" Text="Save Info" OnClick="saveChanges" class="btn btn-success" />
-                            <asp:Label ID="output" runat="server" Text=" OUTPUT "></asp:Label>
+                            <asp:Label ID="output" runat="server" Text=""></asp:Label>
                             <p></p>
 
                         </div>

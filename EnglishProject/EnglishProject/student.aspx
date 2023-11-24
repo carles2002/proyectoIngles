@@ -129,7 +129,7 @@
                     <div class="card-title" runat="server">
                         <h3>Enter the year to see your subjects</h3>
                     </div>
-                    <asp:TextBox ID="year" runat="server" AutoPostBack="true" OnTextChanged="year_TextChanged">_ _ _ _</asp:TextBox>
+                    <asp:TextBox ID="year" runat="server" AutoPostBack="true" OnTextChanged="year_TextChanged"></asp:TextBox>
 
                     <p></p>
                     <h5>Select one subject to see its information</h5>
