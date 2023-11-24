@@ -19,15 +19,15 @@ namespace EnglishProject
         {
             
             
-            // Verificar si la variable de sesión "level" es igual a 0
+            
             if (Session["level"] == null || (int)Session["level"] != 0)
             {
-                // Redireccionar al usuario a otra página o mostrar un mensaje de error
+                
                 Response.Redirect("silly.aspx");
             }
 
             dbc.connectToDB();
-            if (!IsPostBack) //Para saber si se carga por primera vez o es al volver con datos
+            if (!IsPostBack) 
             {
                 viewSubjects();
                 
@@ -45,7 +45,7 @@ namespace EnglishProject
 
             foreach (DataRow row in dt.Rows)
             {
-                // Agrega el nombre de la asignatura como un ítem en la ListBox.
+                
                 subjectsList.Items.Add(row["Name"].ToString());
             }
         }
@@ -59,7 +59,7 @@ namespace EnglishProject
 
 
             DataTable dt = dbc.obtainSubjectInfo(selectedName);
-            //output.Text = selectedName;
+           
 
             foreach (DataRow dr in dt.Rows)
             {
@@ -78,7 +78,7 @@ namespace EnglishProject
         protected void loadStudents()
         {
             String selectedName = selectedSub;
-            //Obtener el ID de la asignatura y cargar los alumnos-----------------------
+           
             DataTable dt = dbc.query("SELECT ID FROM subjects WHERE Name = '" + selectedName + "'");
 
             String subID = "";
@@ -121,10 +121,6 @@ namespace EnglishProject
                 String details = detailsb.Text;
 
 
-                //Comprobacion AQUI
-
-
-                //Hacer update y verificar el resultado
                 bool verification = dbc.updateSubjectInfo(id, name, credits, semester, year, details);
                 if (verification) { output.Text = "todo bien"; }
                 else
@@ -137,7 +133,7 @@ namespace EnglishProject
         }
 
 
-        //STUDENT -------------------------------------------------------------------
+     
         protected void studDNI_add(object sender, EventArgs e)
         {
 
@@ -183,13 +179,13 @@ namespace EnglishProject
 
 
 
-        //PROFESOR---------------------------------------------------------------------------------
+        
 
         protected void loadProfessors()
         {
             profList.Items.Clear();
             String selectedName = selectedSub;
-            //Obtener el ID de la asignatura y cargar los alumnos-----------------------
+          
             DataTable dt = dbc.query("SELECT ID FROM subjects WHERE Name = '" + selectedName + "'");
 
             String subID = "";

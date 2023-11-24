@@ -14,23 +14,23 @@ namespace EnglishProject
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            // Verificar si la variable de sesión "level" es igual a 0
+           
             if (Session["level"] == null || (int)Session["level"] != 0)
             {
-                // Redireccionar al usuario a otra página o mostrar un mensaje de error
+                
                 Response.Redirect("silly.aspx");
             }
 
             dbc.connectToDB();
 
-            if (!IsPostBack) //Para saber si se carga por primera vez o es al volver con datos
+            if (!IsPostBack) 
             {
-                // Ocultar los TextBox al cargar la página
+               
                 ShowTextBoxes();
                 updateProfessors();
             }
 
-            //output.Text = "";
+            
 
 
 
@@ -49,8 +49,7 @@ namespace EnglishProject
 
         protected void saveChanges(object sender, EventArgs e)
         {
-            // Mostrar los TextBox cuando se hace clic en el botón
-
+            
 
             String name = nameB.Text;
             
@@ -58,10 +57,6 @@ namespace EnglishProject
 
             String password = passwordB.Text;
 
-            //Comprobacion AQUI
-
-
-            //Hacer update y verificar el resultado
             bool verification = dbc.insertProfessorInfo(name,dni,password);
             if (verification) { output.Text = "Prodessor: " + name +  " added correctly"; }
             else

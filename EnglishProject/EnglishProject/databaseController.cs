@@ -29,11 +29,11 @@ namespace EnglishProject
        
         public DataTable selectAll(String table)
         {
-            //COMANDOS
+            
             String query = @"SELECT * FROM "+table;
             SQLiteCommand comm = new SQLiteCommand(query, conn);
 
-            //READ DATABASE
+            
             SQLiteDataReader reader = comm.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(reader);
@@ -45,7 +45,7 @@ namespace EnglishProject
             
             SQLiteCommand comm = new SQLiteCommand(query, conn);
 
-            //READ DATABASE
+            
             SQLiteDataReader reader = comm.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(reader);
@@ -53,10 +53,10 @@ namespace EnglishProject
             return dt;
         }
 
-        //Metodo que obtiene los datos del alumno
+       
         public DataTable obtainStudentInfo(String DNI)
         {
-            //Se llama al metodo para hacer consultas
+            
             String sentence = "SELECT * FROM students WHERE DNI = '" + DNI + "'";
 
             DataTable dt = new DataTable();
@@ -68,7 +68,7 @@ namespace EnglishProject
         {
             
             bool verified = true;
-            //Se llama al metodo para hacer consultas
+            
             string sentence = "UPDATE students SET Name = '" + name + "', Surname = '" + surname + "', DOB = '" + DOB + "', Nationality = '" + nationality + "', Address = '" + address + "' WHERE DNI = '" + DNI + "'";
 
             DataTable dt = new DataTable();
@@ -101,7 +101,7 @@ namespace EnglishProject
             {
                 if (DNI == dr["DNI"].ToString()) { return false; }
             }
-                //Se llama al metodo para hacer consultas
+                
             String sentence = "INSERT INTO students (DNI, Name, Surname, DOB, Nationality, Address) VALUES ('" + DNI + "', '" + name + "', '" + surname + "', '" + DOB + "', '" + nationality + "', '" + address + "')";
             dt = query(sentence);
 
@@ -122,7 +122,7 @@ namespace EnglishProject
             {
                 if (DNI != dr["DNI"].ToString()) { return false; }
             }
-            //Se llama al metodo para hacer consultas
+            
             string sentence = "DELETE FROM students WHERE DNI = '" + DNI + "'";
             dt = query(sentence);
             sentence = "DELETE FROM subjectsStud WHERE DNI = '" + DNI + "'";
@@ -136,7 +136,7 @@ namespace EnglishProject
 
         public DataTable obtainSubjectInfo(String Name)
         {
-            //Se llama al metodo para hacer consultas
+            
             String sentence = "SELECT * FROM subjects WHERE Name = '" + Name + "'";
 
             DataTable dt = new DataTable();
@@ -148,7 +148,7 @@ namespace EnglishProject
         {
 
             bool verified = true;
-            //Se llama al metodo para hacer consultas
+            
             string sentence = "UPDATE subjects SET ID = '" + ID + "', Name = '" + name + "', Credits = '" + credits + "', Semester = '" + semester + "', Year = '" + year + "', Details = '" + details + "' WHERE ID = '" + ID + "'";
 
             DataTable dt = new DataTable();
@@ -179,21 +179,19 @@ namespace EnglishProject
             string verifySentence = "SELECT DNI FROM subjectsStud  WHERE DNI = '" + DNI + "' AND ID = '" + ID + "'";
             DataTable dtVerify = query(verifySentence);
 
-            // If any rows are returned, the DNI already exists, so we return false
+            
             if (dtVerify.Rows.Count > 0)
             {
-                return false; // DNI exists, so we cannot add a new student with the same DNI
+                return false; 
             }
-            // Construct the INSERT SQL statement
+            
 
 
             string sentence = "INSERT INTO subjectsStud (ID, DNI, Year) VALUES ('" + ID + "', '" + DNI + "', '" + Year + "')";
             
             
             DataTable dt = query(sentence);
-            // Execute the query and check the result
-            // Assuming 'executeNonQuery' is a method that executes an SQL statement and returns the number of rows affected
-            return true;
+             return true;
         }
 
         public bool addProfessorToSubject(String ID, String DNI, String Year)
@@ -202,20 +200,18 @@ namespace EnglishProject
             string verifySentence = "SELECT DNI FROM subjectsProf  WHERE DNI = '" + DNI + "' AND ID = '" + ID + "'AND Year = '" + Year + "'";
             DataTable dtVerify = query(verifySentence);
 
-            // If any rows are returned, the DNI already exists, so we return false
+           
             if (dtVerify.Rows.Count > 0)
             {
-                return false; // DNI exists, so we cannot add a new student with the same DNI
+                return false; 
             }
-            // Construct the INSERT SQL statement
+            
 
 
             string sentence = "INSERT INTO subjectsProf (ID, DNI, Year) VALUES ('" + ID + "', '" + DNI + "', '" + Year + "')";
 
 
             DataTable dt = query(sentence);
-            // Execute the query and check the result
-            // Assuming 'executeNonQuery' is a method that executes an SQL statement and returns the number of rows affected
             return true;
         }
 
@@ -228,7 +224,7 @@ namespace EnglishProject
             {
                 if (DNI == dr["DNI"].ToString()) { return false; }
             }
-            //Se llama al metodo para hacer consultas
+           
             String sentence = "INSERT INTO professors (DNI, Name) VALUES ('" + DNI + "', '" + name +"')";
             dt = query(sentence);
              sentence = "INSERT INTO users (user, password, level) VALUES ('" + DNI + "', '" + password +"', '" + 2 + "')";
@@ -248,7 +244,7 @@ namespace EnglishProject
             {
                 if (DNI != dr["DNI"].ToString()) { return false; }
             }
-            //Se llama al metodo para hacer consultas
+            
             string sentence = "DELETE FROM professors WHERE DNI = '" + DNI + "'";
             dt = query(sentence);
             sentence = "DELETE FROM subjectsProf WHERE DNI = '" + DNI + "'";

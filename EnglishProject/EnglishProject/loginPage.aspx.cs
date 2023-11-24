@@ -20,7 +20,7 @@ namespace EnglishProject
             dbc.connectToDB();
         
         }
-        /*LOGICA DEL LOGIN*/
+      
         protected void Login_Click(object sender, EventArgs e)
         {
             string userDNI = UserDNITextBox.Text;
@@ -29,16 +29,16 @@ namespace EnglishProject
             try
             {
                 Session["level"] = "";
-                // Sentencia sql que busca al usuario en la bd
+                
                 DataTable dt = dbc.query("SELECT * FROM users WHERE user = '" + userDNI + "' AND password = '" + password + "'");
                 if (dt.Rows != null)
                 {
-                    //Obtener datos de la tabla de la bd 
+                   
                     foreach (DataRow dr in dt.Rows)
                     {
                         
 
-                        // Guardar los valores en la sesión
+                        
                         Session["user"] = dr["user"].ToString();
                         Session["level"] = Convert.ToInt32(dr["level"]);
 
@@ -49,16 +49,16 @@ namespace EnglishProject
                     switch (level)
                     {
                         case 0:
-                            //ADMIN
+                            
                             Response.Redirect("admin.aspx");
                             break;
                         case 1:
-                            //STUDENT
+                            
                             Response.Redirect("student.aspx");
                             break;
                         
                         case 2:
-                            //PROFESSOR
+                            
                             Response.Redirect("professor.aspx");
                             break;
                         default:
@@ -81,9 +81,7 @@ namespace EnglishProject
             }
             catch (Exception ex)
             {
-                // Manejo de excepciones aquí
-                // Puedes imprimir el mensaje de la excepción o realizar cualquier otra acción necesaria.
-                // Por ejemplo:
+                
                 LabelDBPath.Text = "Error: No se ha encontrado al usuario en la BD o la conexión ha fallado" ;
                 Panel1.Visible = true;
             }
