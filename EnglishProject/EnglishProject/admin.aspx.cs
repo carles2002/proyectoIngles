@@ -18,7 +18,7 @@ namespace EnglishProject
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            Session["level"] = 0;
+            
             // Verificar si la variable de sesión "level" es igual a 0
             if (Session["level"] == null || (int)Session["level"] != 0)
             {
@@ -86,7 +86,7 @@ namespace EnglishProject
             {
                 subID = dr["ID"].ToString();
             }
-            output.Text = subID;
+            
 
             dt = dbc.query("SELECT DNI FROM subjectsStud WHERE ID = '" + subID + "'");
             String DNI = "";
@@ -95,7 +95,7 @@ namespace EnglishProject
             {
                 DNI = dr["DNI"].ToString();
                 studentsList.Items.Add(DNI);
-                //output.Text += DNI+"//";
+                
             }
         }
 
@@ -254,7 +254,7 @@ namespace EnglishProject
         }
         protected void goToAddProfessor(object sender, EventArgs e)
         {
-            Response.Redirect("addStudent.aspx");
+            Response.Redirect("addProfessor.aspx");
         }
 
 

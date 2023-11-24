@@ -214,6 +214,43 @@ namespace EnglishProject
             return true;
         }
 
+        public bool insertProfessorInfo(String name,  String DNI)
+        {
+
+            DataTable dt = new DataTable();
+            dt = query("SELECT DNI FROM professors  WHERE DNI = '" + DNI +"'");
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (DNI == dr["DNI"].ToString()) { return false; }
+            }
+            //Se llama al metodo para hacer consultas
+            String sentence = "INSERT INTO professors (DNI, Name) VALUES ('" + DNI + "', '" + name +"')";
+
+
+            dt = query(sentence);
+
+
+            return true;
+        }
+
+        public bool deleteProfessor(String DNI)
+        {
+
+            DataTable dt = new DataTable();
+            dt = query("SELECT DNI FROM professors  WHERE DNI = '" + DNI + "'");
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (DNI != dr["DNI"].ToString()) { return false; }
+            }
+            //Se llama al metodo para hacer consultas
+            string sentence = "DELETE FROM professors WHERE DNI = '" + DNI + "'";
+            dt = query(sentence);
+            sentence = "DELETE FROM subjectsProf WHERE DNI = '" + DNI + "'";
+            dt = query(sentence);
+
+            return true;
+        }
+
 
 
 

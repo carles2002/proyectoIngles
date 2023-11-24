@@ -11,7 +11,7 @@ namespace EnglishProject
 {
 
 
-    public partial class professor
+    public partial class addProfessor
     {
 
         /// <summary>
@@ -33,49 +33,49 @@ namespace EnglishProject
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl navbarText;
 
         /// <summary>
-        /// Control year.
+        /// Control name.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox year;
+        protected global::System.Web.UI.WebControls.Label name;
 
         /// <summary>
-        /// Control subjectsList.
+        /// Control nameB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox subjectsList;
+        protected global::System.Web.UI.WebControls.TextBox nameB;
 
         /// <summary>
-        /// Control subjectInfoLabel.
+        /// Control dni.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label subjectInfoLabel;
+        protected global::System.Web.UI.WebControls.Label dni;
 
         /// <summary>
-        /// Control subjectInfo.
+        /// Control dniB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label subjectInfo;
+        protected global::System.Web.UI.WebControls.TextBox dniB;
 
         /// <summary>
-        /// Control studentsList.
+        /// Control send_information.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox studentsList;
+        protected global::System.Web.UI.WebControls.Button send_information;
 
         /// <summary>
         /// Control output.
@@ -85,5 +85,23 @@ namespace EnglishProject
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label output;
+
+        /// <summary>
+        /// Control studentList.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox studentList;
+
+        /// <summary>
+        /// Control deleteButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button deleteButton;
     }
 }

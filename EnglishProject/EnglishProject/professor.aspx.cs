@@ -8,13 +8,14 @@ using System.Web.UI.WebControls;
 
 namespace EnglishProject
 {
-	public partial class professor : System.Web.UI.Page
-	{
+    public partial class professor : System.Web.UI.Page
+    {
+        
         databaseController dbc = new databaseController();
         String yearText = "";
         protected void Page_Load(object sender, EventArgs e)
 		{
-            
+
             
            // Verificar si la variable de sesión "level" es igual a 2
            if (Session["level"] == null || (int)Session["level"] != 2)
@@ -28,6 +29,7 @@ namespace EnglishProject
             dbc.connectToDB();
 
         }
+
         protected void year_TextChanged(object sender, EventArgs e)
         {
             
@@ -39,6 +41,7 @@ namespace EnglishProject
 
             // Llena la ListBox con los nombres de las asignaturas del DataTable.
             subjectsList.Items.Clear(); // Limpia los ítems existentes.
+            studentsList.Items.Clear();
             foreach (DataRow row in dt.Rows)
             {
                 // Agrega el nombre de la asignatura como un ítem en la ListBox.
@@ -51,7 +54,8 @@ namespace EnglishProject
         {
             // Obtiene el ID seleccionado de la ListBox.
             string selectedID = subjectsList.SelectedValue;
-            
+            studentsList.Items.Clear();
+
             // Ejecuta la consulta en la base de datos para obtener la información correspondiente al ID seleccionado.
             // De nuevo, es importante utilizar parámetros para evitar inyecciones SQL, pero seguiré tu solicitud de mantener la estructura.
             DataTable dt = dbc.query("SELECT * FROM subjects WHERE Name = '" + selectedID + "'");
@@ -97,5 +101,6 @@ namespace EnglishProject
 
 
         }
+
     }
 }
