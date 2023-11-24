@@ -59,7 +59,7 @@ namespace EnglishProject
 
 
             DataTable dt = dbc.obtainSubjectInfo(selectedName);
-            output.Text = selectedName;
+            //output.Text = selectedName;
 
             foreach (DataRow dr in dt.Rows)
             {
@@ -95,7 +95,7 @@ namespace EnglishProject
             {
                 DNI = dr["DNI"].ToString();
                 studentsList.Items.Add(DNI);
-                output.Text += DNI+"//";
+                //output.Text += DNI+"//";
             }
         }
 
@@ -164,8 +164,19 @@ namespace EnglishProject
         protected void deleteStudentSubj(object sender, EventArgs e)
         {
             String DNI = studentsList.SelectedValue;
-            String subID = subjectsList.SelectedValue;
-            DataTable dt = dbc.query("DELETE FROM subjectsStud WHERE DNI = '" + DNI + "' AND ID = '" + subID + "'");
+            
+            String subID = selectedSub;
+
+            DataTable dt = dbc.query("SELECT ID FROM subjects WHERE Name = '" + subID + "'");
+
+            
+            foreach (DataRow dr in dt.Rows)
+            {
+                subID = dr["ID"].ToString();
+            }
+
+            
+            dt = dbc.query("DELETE FROM subjectsStud WHERE DNI = '" + DNI + "' AND ID = '" + subID + "'");
 
             loadStudents();
         }
